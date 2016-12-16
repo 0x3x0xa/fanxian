@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!--<meta name="format-detection" content="telephone=no"/>-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+         <link rel="stylesheet"  href="__STYLE__/wap/main.css"  type="text/css"/>
+        <link rel="stylesheet"  href="__STYLE__/wap/base.css"  type="text/css"/>
+        <script type="text/javascript" src="__JS__/home/jquery.js"></script>
+
+        <title></title>
+    </head>
+    <style type="text/css">
+        .btn { padding: 10px 20px; display: inline-block; background-color: #011C53; font-size: 14px; color: #fff; border-radius: 4px; }
+    </style>
+    <body>
+        <div class="viewport">
+            <!--头部-->
+            <div class="header">
+                <a class="back" href='javascript:history.go(-1)'><b>&nbsp;</b>返回</a>
+                <span class="header_title">基本信息</span>
+            </div>
+            <!--头部End-->
+
+            <!--内容-->
+            <div class="information_form">
+				<p style="text-align: left; margin-top: 10px;font-size:16px;">基本资料</p>
+                <p>会员账号：<{$userInfo.username}></p>
+                <p>会员昵称：<{$userInfo.name}></p>
+                <p>手机号码：<{$userInfo.mobile}></p>
+                <p>推荐人：<{$userInfo.recommend}></p>
+                <p>本金钱袋：<{$userInfo.principal}></p>
+                <p>收益钱袋：<{$userInfo.profit}></p>
+                <p>直推人数：<{$userInfo.directnum}></p>
+                <p>团队人数：<{$userInfo.group}></p>
+				<p>注册日期：<{$userInfo.regtime|date='Y-m-d',###}></p>
+				<p style="text-align: left; margin-top: 20px;font-size:16px;">银行信息</p>
+                <p style="text-align: right; margin-top: 30px;"><a class="" href='javascript:void(0);' style='display: inline-block;box-sizing: border-box;height: 24px;padding: 4px 6px;border-radius: 4px; color: #fff;background-color: #3bb4f2;border-color: #3bb4f2;' onclick="showPage('300','370','添加银行卡','<{:U("Member/addbank")}>')" >添加银行卡</a></p>
+				  <volist name='userbanklist' id='vo'>
+					 <p>银行名称:<{$vo.bank}></p>
+					 <p>开户姓名:<{$vo.username}></p>
+					 <p>银行卡号：<{$userInfo.group}></p>
+                                          <p>开户银行网点地址：<{$vo.kaihubank}></p>
+				  </volist>
+            </div>
+            <!--内容End-->
+            <!--底部-->
+            <div style="height: 55px;"></div>
+
+       <include file='Common:foot' />

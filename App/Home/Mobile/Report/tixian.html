@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!--<meta name="format-detection" content="telephone=no"/>-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/H-ui/static/h-ui/css/H-ui.min.css" />
+  <link rel="stylesheet"  href="__STYLE__/wap/main.css"  type="text/css"/>
+        <link rel="stylesheet"  href="__STYLE__/wap/base.css"  type="text/css"/>
+        <script type="text/javascript" src="__JS__/home/jquery.js"></script>
+
+        <title></title>
+    </head>
+    <body style="background: #fff">
+        <div class="viewport">
+            <!--头部-->
+         
+            <!--头部End-->
+  	<form action=""  class="form form-horizontal SubmiForm" id="form-article-add"  >
+		{__TOKEN__}
+            <!--内容-->
+            <div class="Tixian_list">
+                <ul>       <li>
+                        提现金额:
+                        <input type="text"  class="money"  style='width:70%;height: 37px;line-height: 37px;background: #fbfbfb' name="<{$id}>" placeholder="请输入提现金额"  errormsg="金额格式不正确！" nullmsg="请输入金额！" datatype="n"   ajaxurl="<{:U('/Home/Report/getallowInfo')}>"  />  <span> </span>
+                    </li>
+                         <li>
+                        二级密码
+                        <input type="password" name="towpassword" class="towpassword"   style='background: #fbfbfb;width:70%;height: 37px;line-height: 37px;border: 0px;text-indent: 1em;' placeholder="请输入二级密码" nullmsg="请输入二级密码！" datatype="*" />  <span> </span>
+                    </li>
+                    <li style="text-align: center;border:0px;">    
+                <input value="提交" class=" tx_subtn"  type="submit" style="width:30%;border-radius:5px;height:35px;line-height: 35px;background-color: #011C53;color:#fff;border:0px;" />
+                <button onClick="close_ifrme();" class="btn btn-default radius" type="button">&nbsp;&nbsp;关闭&nbsp;&nbsp;</button>
+               </li>
+                   
+                </ul>      
+            </div>
+	</form>
+
+         
+<include file='Common:footer' />
+<script type="text/javascript">
+$(function(){
+
+$(".SubmiForm").Validform({
+                callback:function(form){
+                  tixianbenjin(<{$id}>);
+                    return false;
+		},
+		tiptype:1,
+         
+	});	
+});
+</script> 

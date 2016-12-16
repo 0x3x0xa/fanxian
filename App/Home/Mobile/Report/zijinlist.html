@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!--<meta name="format-detection" content="telephone=no"/>-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/H-ui/static/h-ui/css/H-ui.min.css" />
+  <link rel="stylesheet"  href="__STYLE__/wap/main.css"  type="text/css"/>
+        <link rel="stylesheet"  href="__STYLE__/wap/base.css"  type="text/css"/>
+        <script type="text/javascript" src="__JS__/home/jquery.js"></script>
+        <title></title>
+    </head>
+    <body>
+        <div class="viewport">
+            <!--头部-->
+            <div class="header">
+                <a class="back" href='javascript:history.go(-1)'><b>&nbsp;</b>返回</a>
+                <span class="header_title">资金明细</span>
+            </div>
+            <!--头部End-->
+
+            <!--内容-->
+            <div class="money_list">
+                <ul>
+ <volist name='list' id='vo'>
+                    <li>
+                        <span><{$type[$vo['pursetype']]}></span>
+                        <span>日期:2016-12-6</span>
+                        <span></span>
+                        <span>类型:<if condition='$vo.status eq 1'>收入<elseif condition='$vo.status eq 2' />支出</if></span>
+                        <span><if condition='$vo.status eq 1'>收入<elseif condition='$vo.status eq 2' />支出</if>：￥<if condition='$vo.status eq 1'><{$vo.sum}><elseif condition='$vo.status eq 2' /><{$vo.export}></if></if></span>
+
+                        <span>余额:<{$vo.balance}></span>
+                        <span>说明:<{$vo.explain}></span>
+                    </li>
+                   </volist>
+
+                </ul>
+                <!--页码-->
+                <div style="height:15px;"></div>
+                <div class="page">
+                     <{$page}> 
+                </div>
+                <!--页码End-->
+            </div>
+
+           <div style="height:15px;"></div>
+<include file='Common:foot' />

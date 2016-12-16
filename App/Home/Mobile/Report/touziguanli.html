@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!--<meta name="format-detection" content="telephone=no"/>-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+         <link rel="stylesheet"  href="__STYLE__/wap/main.css"  type="text/css"/>
+        <link rel="stylesheet"  href="__STYLE__/wap/base.css"  type="text/css"/>
+        <script type="text/javascript" src="__JS__/home/jquery.js"></script>
+
+        <title></title>
+    </head>
+    <body>
+        <div class="viewport">
+            <!--头部-->
+            <div class="header">
+                <a class="back" href='javascript:history.go(-1)'><b>&nbsp;</b>返回</a>
+                <span class="header_title">我要理财</span>
+            </div>
+            <!--头部End-->
+            <!--内容-->
+            <div class="Touzi_list">   
+                <ul style="margin: 10px 4px;">
+                    <volist name='list' id='vo'>
+                    <li> 
+                        
+                        <div class="Touzi_money">
+                            <span >投资金额</span>
+                            <span class="Touzi_data"><{$vo.money}></span>
+                        </div>
+                        <div class="Touzi_rate">
+                            <span >利率</span>
+                            <span class="Touzi_data"><{$vo.rate}></span>
+                        </div>
+                          <div class="Touzi_rate">
+                            <span >利息</span>
+                            <span class="Touzi_data"><{$vo.bonus}></span>
+                        </div>
+                         <div class="Touzi_rate">
+                            <span >日期</span>
+                            <span class="Touzi_data"><{$vo.create_date|date='m-d',###}></span>
+                        </div>
+                        <div class="Touzi_button">
+                            <a href="javascript:;" style="color:blue;padding: 4px 10px;background-color: #011C53;color: #fff;border-radius: 5px;"  onclick="showPage('300','246','我要提现','<{:U('Report/tixian',array('id'=>$vo['id']))}>')"> 转出</a>
+                          
+                        </div>
+                    </li>
+                    </volist>
+                </ul>
+                <!--页码-->
+                <div style="height: 15px;"></div>
+                <div class="page">
+                      <{$page}> 
+                </div>
+                <!--页码End-->
+                <div style="height: 25px;"></div>
+            </div>
+
+
+
+            <!--内容End-->
+
+            <!--底部-->
+        <include file='Common:foot' />
+            <!--底部End-->

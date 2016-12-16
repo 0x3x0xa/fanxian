@@ -1,0 +1,44 @@
+<include file='Common:head' />
+<title></title>
+</head>
+<body style='background-color: #DCE0EB;'>
+<div class="" style='background: #fff;'>
+<div class="page-container" >
+   	<form action=""  class="form form-horizontal SubmiForm" id="form-article-add"  >
+		{__TOKEN__}
+                
+		            <div class="row cl">
+			<label class="form-label col-xs-3 col-sm-4 " style="text-align: right;"><span class="c-red">*</span>提现金额：</label>
+			<div class="formControls col-xs-5 col-sm-4">
+                            <input type="text" class="input-text money"  value="" placeholder="" id="" name="<{$id}>"  errormsg="金额格式不正确！" nullmsg="请输入金额！" datatype="n"   ajaxurl="<{:U('/Home/Report/getallowInfo')}>" >
+			</div>
+                           <div class="Validform_checktip"></div>
+		</div>   
+		<div class="row cl">
+			<label class="form-label col-xs-3 col-sm-4 " style="text-align: right;"><span class="c-red text-r">*</span>二级密码：</label>
+			<div class="formControls col-xs-5 col-sm-4">
+				<input type="password" name="towpassword" id="" placeholder="" value="" class="input-text towpassword"  nullmsg="请输入二级密码！" datatype="*"  >
+			</div>
+                           <div class="Validform_checktip"></div>
+		</div>
+
+
+		<div class="row cl text-c">
+                    <button  class="btn btn-secondary radius"   type="submit"><i class="Hui-iconfont">&#xe632;</i> 提现</button>
+		</div>
+	</form>
+</div>
+<include file='Common:foot' />
+<script type="text/javascript">
+$(function(){
+
+$(".SubmiForm").Validform({
+                callback:function(form){
+                  tixianbenjin(<{$id}>);
+                    return false;
+		},
+		tiptype:2,
+         
+	});	
+});
+</script> 

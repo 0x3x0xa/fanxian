@@ -1,0 +1,309 @@
+﻿select{-webkit-appearance: none;border-radius:0px;}
+select{height:37px;padding-left:1px;}
+
+
+.footer{border:0px;padding:0px;}
+/*注册页面*/
+/*.login_dv {background:url('../../images/wap/login_bg.jpg') center no-repeat;}*/
+.login_header{height: 50px;background-color: #011C53;text-align: center;line-height: 50px;color: #fff;font-size: 14pt}
+.login_headerimg{ height: 200px;   background: url(../../images/wap/login_header.jpg) center no-repeat;}
+.login_sub_dv {width:80%;margin:auto;padding-bottom:35px;}
+.login_img img{width:150px;height: 122px; }
+.login_form {text-align:center;}
+.login_form input{width:95%;border-radius:5px;padding:15px 0;}
+.login_form input[type=password],.login_form input[type=text] {padding-left:2em;border:1px solid #bfbfbf; margin-top:15px;}
+.login_form input[type=submit] {margin-top:20px;background-color:#1f3e73;border:1px solid #1f3e73;color:#fff;font-size:14px;font-weight:bold;}
+.forgetPassword {width:100px;display:block;float:none;color:#000;text-align:center;margin:25px auto; }
+.two_weima {width:140px;margin:0 auto;}
+.two_weima img { width:100%;}
+.login_btm {font-size:16px;text-align:center;padding:15px;padding-bottom: 40px;color:#1f3e73;}
+.login_form .user_name{background: url(../../images/wap/ico/user.png) center left no-repeat;    background-position-x: 5px;}
+.login_form .pwd{background: url(../../images/wap/ico/password.png) center left no-repeat;    background-position-x: 5px;}
+.login_form  .code{background: url(../../images/wap/ico/code.png) center left no-repeat;    background-position-x: 5px;}
+/*注册页面End*/
+
+/*冻结钱袋收支页面*/
+.freeze_list li { background-color:#fff;padding-bottom:4%;margin-bottom:8px;border:1px solid #d4d4d4;padding-top:2%;}
+.freeze_list span {display:inline-block;font-size:14px;white-space:nowrap;padding:0 3%;margin-top:2%;color:#000;overflow:hidden;}
+.freeze_list b {display:block;white-space:nowrap;font-size:14px;padding:0 3%;margin-top:2%;color:#000;overflow:hidden;}
+
+/*冻结钱袋收支页面End*/
+
+/*收件箱页面*/
+.receive_list li {padding:4%;background-color:#fff;margin-bottom:8px;}
+.receive_list p { line-height:21px;color:#000;font-size:14px;}
+.receive_title {display:inline-block;width:78%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#000;font-size:14px}
+.receive_uncheck { float:right;display:inline-block;padding:2px 8px;background-color:#e6ecf7;border-radius:15px;margin-top:-3px;color:#ff0000}
+.receive_checked { float:right;display:inline-block;padding:2px 8px;background-color:#e6ecf7;border-radius:15px;margin-top:-3px;color:#1f3e73}
+.reply {display:block;line-height:21px;color:#4f4f4f;font-size:14px;}
+p.reply_datetime {color:#4f4f4f }
+/*收件箱页面End*/
+
+/*添加留言页面*/
+.create_message {padding:0 5%;}
+.create_message p {color:#000;font-size:14px;margin-top:5%;margin-bottom:5px;}
+.create_message input[type=text],.create_message select,.create_message textarea{width:100%;border:0px;color:#8d8d8d}
+.create_message select {padding:10px;color:#8d8d8d}
+.create_message input[type=text] {padding:10px 0;text-align:center;}
+.create_message textarea {padding:0px; }
+.sub_btn {border:0px;color:#fff;padding:20px 16%;border-radius:20px;background-color:#011C53;margin-right:5px;}
+.res_btn {border:0px;color:#fff;padding:10px 16%;border-radius:20px;background-color:#52b54d;}
+/*a  upload 上传按钮样式*/
+.a-upload {
+    padding: 10px 50px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    background: #1f3e73;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #fff;
+    background: #1f3e73;
+    border-color: #1f3e73;
+    text-decoration: none
+}
+/*添加留言页面End*/
+
+/*会员中心页面*/
+.UC_banner {background:url('../../images/wap/UC_banner.jpg') no-repeat;background-size:cover;padding:20px 0;height: 120px}
+.UC_jrhq {background:url('../../images/wap/ico/sound.png') no-repeat;height: 33px;padding-left: 10%;line-height: 33px;background-color: #fff;border-bottom: 1px solid #d4d4d4;background-position-x: 3%;}
+.UC_wallet{    padding-top: 10px;padding-bottom: 10px;    background-color: #fff;}
+.UC_wallet ul{overflow: hidden;}
+.UC_waletbox{float: left;width:30%;background-color: #15B9D5;margin-left: 3%;padding-top: 10px;padding-bottom: 10px}
+.icon_wallet{background: url(../../images/wap/ico/ico_wallet.png) repeat;display: block;height: 21px; width: 21px;background-size: 300px;margin-bottom: 5px;margin-left: auto; margin-right: auto;}
+.icon_bj{background-position: 0px 0px;}
+.icon_sy{ background-position: -89px 0px;}
+.icon_jl{background-position: -185px 0px;}
+.icon_jl2{    background-position: -279px 0px;}
+.UC_waletbox span{display: block;text-align: center;color:#fff;}
+.UC_logo {width:25%;background-color:#1f3e73;border-radius:50%;height:80px;width:80px;text-align:center;margin:0 auto;}
+.UC_logo img {width:80%;margin-top:28px;}
+.UC_twoweima {width:85px;float:left;margin-left:8%;text-align:center;}
+.UC_twoweima img { width:80%;}
+.UC_twoweima span {color:#fff;font-size:12px;display:block;}
+.UC_information {padding:3%;background-color:#fff;border-bottom:1px solid #d4d4d4;}
+.UC_information span{width:49%;display:inline-block;font-size:14px;overflow:hidden;white-space:nowrap;line-height:25px;}
+.UC_information span i {color:#1f3e73;font-weight:bold;}
+.UC_PHelp_btn {width:44%;padding:8px 0;background-color:#1f3e73;display:inline-block;color:#fff;font-size:16px;text-align:center;border-radius:25px;margin-left:3%;}
+.UC_GHelp_btn {width:44%;padding:8px 0;background-color:#52b54d;display:inline-block;color:#fff;font-size:16px;text-align:center;border-radius:25px;margin-left:3%;}
+.UC_menu { background-color:#fff;border-bottom:1px solid #d4d4d4;margin-bottom:10px;}
+/*.UC_menu li {padding:3% 5%;border-top:1px solid #d4d4d4 }*/
+.UC_menu li > div {padding:3%;border:1px solid #d4d4d4;border-bottom:0px;}
+.UC_menu ul { border-left:1px solid #d4d4d4;border-right:1px solid #d4d4d4;}
+.UC_menu ul a {display:block;padding:3% 10%;border-top:1px solid #e4e4e4;margin-top:-1px;}
+.UC_menu ul li {list-style-type:disc;list-style-position:inside;}
+.UC_menu span {overflow:hidden;background:url('../../images/wap/ico/UC_ico.png') no-repeat;background-size:18px;padding-left:30px;line-height:25px;display:block;cursor:pointer;}
+.UC_menu i {display:inline-block;width:20px;height:20px;margin-right:10px;float:left;}
+.UC_menu .selected b{display:block;-webkit-transform: rotate(90deg);/*Safari 4+,Google Chrome 1+  */-moz-transform: rotate(90deg);/*Firefox 3.5+*/filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);/*ie*/}
+.UC_menu b {float:right;margin-top:0px;}
+/*.UC_menu span {display:table-cell;vertical-align:middle;font-size:14px;line-height:20px;}*/
+span.ico_UC_home { background-position:0px 4px;}
+span.ico_UC_information { background-position:0px -42px;}
+span.ico_UC_MManager { background-position:0px -90px;}
+span.ico_UC_FManager { background-position:0px -136px;}
+span.ico_UC_MCenter { background-position:0px -193px;}
+span.ico_UC_TCenter { background-position:0px -239px;}
+span.ico_UC_TAnnouncement { background-position:0px -286px;}
+span.ico_UC_Kefu { background-position:0px -332px;}
+span.ico_UC_Logout { background-position:0px -378px;}
+/*会员中心页面End*/
+
+
+/*基本信息页面*/
+.information_form {padding:0 5%;}
+.information_form p {color:#000;font-size:14px;margin-top:5%;margin-bottom:5px;}
+.information_form input[type=text],.information_form select{width:100%;border:0px;color:#8d8d8d}
+.information_form input[type=text] {padding:10px 0;text-indent:1em;}
+.information_form textarea {padding:0px; }
+.information_form select { padding:10px; }
+.select{}
+.yanzhengma {height:37px;margin-left:3px;vertical-align:middle;margin-top:-1px; }
+/*基本信息页面End*/
+
+
+/*激活币支收*/
+.activate_list li { background-color:#fff;padding-bottom:2%;margin-bottom:8px;border:1px solid #d4d4d4;}
+.activate_list span {display:inline-block;width:26%;font-size:9pt;white-space:nowrap;padding:0 3%;margin-top:2%;color:#000;overflow:hidden;font-size:14px}
+    .activate_list span:nth-child(2) {width:40%; }
+    .activate_list span:nth-child(3) {width:auto;} 
+.activate_list b {display:block;white-space:nowrap;font-size:9pt;padding:0 3%;margin-top:2%;color:#000;overflow:hidden;font-size:14px}
+/*激活币支收End*/
+
+
+/*接受帮助&&提供赞助*/
+.Apply_form {background-color:#fff;padding:4%;border:1px solid #e5e5e5;margin-bottom:10px;}
+.Apply_form input[type=text] {padding:8px 0px;text-indent:3px;width:50%; }
+.Apply_form input[type=submit] {padding:7px 20px;border:1px solid #1f3e73; background-color:#1f3e73;color:#fff;margin-left:6px;border-radius:20px;}
+.Apply_form input[type=button] {padding:7px 20px;border:1px solid #1f3e73; background-color:#1f3e73;color:#fff;margin-left:6px;border-radius:20px;}
+.money_info {background-color:#fff;padding:4%;border:1px solid #e5e5e5;margin-bottom:10px; }
+.money_info span {display:inline-block;line-height:23px;font-size:14px; }
+.money_info b {font-weight:bold;color:#1f3e73;font-size:14px;}
+.water_info li{background-color:#fff;border:1px solid #e5e5e5;margin-bottom:10px; }
+.water_info span {line-height:23px;white-space:nowrap;font-size:14px;}
+.help_w30 {display:inline-block; }
+.help_w45 {display:inline-block; }
+.water_info a {display:inline-block;float:right;padding:3px 15px;background-color:#e6ecf7;color:#1f3e73;border-radius:11px;line-height:16px;}
+.water_info_dv {padding:4%;border-bottom:1px solid #e5e5e5;}
+/*接受帮助End*/
+
+/*激活币转账*/
+.activate_form {padding:0 5%;}
+.activate_form p {color:#000;font-size:14px;margin-top:5%;margin-bottom:5px;}
+.activate_form input[type=text],.activate_form input[type=password] {padding:10px 0;text-indent:1em;width:100%;border:0px;color:#8d8d8d}
+/*激活币转账End*/
+
+/*通知公告*/
+.Notice_list li {background-color:#fff;padding:4%;border-bottom: 1px solid #e5e5e5; list-style-type: disc;list-style-position: inside;}
+.Notice_list p, .Notice_list span { line-height:20px;font-size:14px;}
+.Notice_list p {color:#000;font-weight:bold;line-height:25px;}
+.Notice_zhaiyao { color:#434343;display:block;height:41px;overflow:hidden;}
+.Notice_datetime {float:right;font-weight:100;color:#434343 }
+/*通知公告End*/
+
+/*通知公告详情*/
+.Notice_head {border-bottom:1px solid #e5e5e5;padding: 15px 5%;text-align:center;background-color:#fff;line-height:25px;}
+.Notice_head span {color:#434343;margin-right:8px; }
+    .Notice_head p, .Notice_head span { font-size:14px;}
+.Notice_content {background-color:#fff;padding:10px; }
+
+/*通知公告详情End*/
+
+
+/*玩家列表页面*/
+.user_list li { background-color:#fff;padding-bottom:3%;margin-bottom:8px;border:1px solid #d4d4d4;}
+.user_list span {display:inline-block;width:26%;font-size:13px;white-space:nowrap;padding:0 3%;margin-top:3%;color:#000;overflow:hidden;}
+.user_list span:nth-child(3n+1) {width:20%;}
+.user_list span:nth-child(3n+2) {width:33%;}
+.user_list span:nth-child(3n+3) {width:auto;}
+    .user_list span:nth-last-child(2) {width:auto;}
+    .user_list span:nth-child(2) { width:40%;}
+/*玩家列表页面End*/
+
+/*玩家注册页面*/
+.Register_form {padding:0 5%;}
+.Register_form p {color:#000;font-size:14px;margin-top:5%;margin-bottom:5px;}
+.Register_form input[type=text],.Register_form select,.Register_form input[type=password]{width:100%;border:0px;color:#8d8d8d}
+.Register_form input[type=text],.Register_form input[type=password] {padding:15px 0;text-indent:0.5em;margin-top: 5%; margin-bottom: 5px;border: 1px solid #d4d4d4;}
+.Register_form textarea {padding:0px; }
+.Register_form select { padding: 10px; margin-top: 5%; margin-bottom: 5px;}
+/*玩家注册页面End*/
+
+/*现金钱袋支收*/
+.money_list li { background-color:#fff;padding-bottom:3%;margin-bottom:8px;border:1px solid #d4d4d4;padding-top:3%;}
+.money_list span {display:inline-block;font-size:13px;white-space:nowrap;padding:0 3%;color:#000;overflow:hidden;line-height:20px;}
+.money_list span:nth-child(3n+1) {width:20%;}
+    .money_list span:last-child { width:auto;}
+.money_list span:nth-child(3n+3) {width:auto;}
+.money_list span:nth-last-child(2) {width:auto;}
+.money_list span:nth-child(2) { width:40%;}
+.money_list span:nth-child(5) {}
+.money_list span:nth-child(6) { width:29%;}
+/*现金钱袋支收End*/
+
+/*修改密码页面*/
+.CLPassword_form {padding:0 5%;}
+.CLPassword_form p {color:#000;font-size:14px;margin-top:5%;margin-bottom:5px;}
+.CLPassword_form input[type=password]{width:100%;border:0px;color:#8d8d8d;padding:10px 0;text-indent:1em;}
+.CSPassword_form {padding:0 5%;}
+.CSPassword_form p {color:#000;font-size:14px;margin-top:5%;margin-bottom:5px;}
+.CSPassword_form input[type=password]{width:100%;border:0px;color:#8d8d8d;padding:10px 0;text-indent:1em;} 
+
+/*修改密码页面End*/
+
+/*赞助页面*/
+
+.sponsor_form{padding:0 5%;}
+.sponsor_form p {color:#000;font-size:14px;margin-top:5%;margin-bottom:5px;}
+.sponsor_form select {padding:10px;color:#8d8d8d;width:100%;border:0px;}
+.sponsor_form input[type=password]{width:100%;border:0px;color:#8d8d8d;padding:10px 0;text-indent:1em;}
+/*赞助页面End*/
+
+
+/*2016-03-07*/
+/*提供帮助跟接受帮助*/
+.opacity { position: absolute; background-color: #000;  top: 0; left: 0; right: 0; bottom: 0; opacity: 0.4; }
+.three { padding: 4%; z-index: 1; position: absolute; background-color: #fff; top: 20%; left: 0; right: 0;max-height:320px;overflow:scroll;}
+.f_dv { border-top: 1px solid #e5e5e5; padding-top: 10px; margin-top: 10px;}
+.img_dv { text-align: center; padding-bottom: 10px;}
+.img_dv img { display: inline-block; max-width: 100%;}
+.b_dv {text-align:center;padding-bottom:10px; }
+.b_dv input[type=submit]{padding:5px 15px;background-color:#52b54d;color:#fff;border:0px;vertical-align:top;line-height:20px;margin-top:1px;margin-left:5px; }
+.b_dv input[type=button]{padding:5px 15px;background-color:#52b54d;color:#fff;border:0px;vertical-align:top;line-height:20px;margin-top:1px;margin-left:5px; }
+
+/**分页**/
+.page {text-align:center; }
+.page a {padding:6px 12px;color:#000;background-color:#fff;margin-left:1px;margin-right:1px;}
+.page span {padding:6px 12px;margin-left:1px;margin-right:1px;color:#000;background-color:#fff;display:initial;width:auto;}
+.page  .current{ color:#fff;   background-color: #1f3e73}
+.page a.hot {color:#fff;background-color:#1f3e73; }
+
+/**威尼斯风情**/
+.Fengqing_nav ul {height:45px;border:1px solid #e5e5e5;text-align: center; background-color: #fff;}
+.Fengqing_nav ul li{width:33%;float: left;line-height: 45px;}
+.Fengqing_nav a:active{color:#011C53;} 
+.Fengqing_list ul{overflow:hidden;}
+.Fengqing_img{float: left;width:30%;/*border: 1px solid #dcd3d3;*/text-align: center;margin: 5px;/*background-color: #fff9f9;*/}
+.Fengqing_img a img{width:120px;height: 120px;}
+/**威尼斯风情end**/
+
+/**我要理财**/
+.Licai_tip{width:92%;height: 65px;text-align: center;margin:15px  4%;background-color: #011C53;border-radius: 5px;}
+.Licai_tip span{width:50%;line-height: 65px;float: left;color: #fff;}
+.Licai_list li {background-color:#fff;padding:4%;border:1px solid #e5e5e5;margin-bottom:10px;border-radius: 5px; }
+.Licai_topinfo{overflow: hidden;}
+.Licai_topinfo span{width: 50%;line-height:31px;float: left;font-size:14px;}
+.Licai_bottominfo{overflow: hidden;}
+.Licai_bottominfo span{width: 50%;line-height:31px;float: left;font-size:14px;}
+.right_info{text-align: right}
+/**我要理财end**/
+
+/**我要投资**/
+.Touzi_list li{height:41px;background-color:#fff;padding:4%;border:1px solid #e5e5e5;margin-bottom:10px;border-radius: 5px;}
+.Touzi_money{width:20%;float: left;line-height: 41px}
+.Touzi_data{color:#e89312;}
+.Touzi_money span,.Touzi_rate span{width: 100px;display: block;line-height: 20px;height: 20px;}
+.Touzi_rate{width:20%;float: left;line-height: 41px}
+.Touzi_button{width:20%;float: left;line-height: 41px; text-align: center;}
+/**我要投资end**/
+
+/*.Touzi_list li {background-color:#fff;padding:4%;border:1px solid #e5e5e5;margin-bottom:10px;border-radius: 5px; }
+.Touzi_topinfo{overflow: hidden;}
+.Touzi_topinfo span{width: 50%;line-height:31px;float: left;font-size:14px;}
+.Touzi_bottominfo{overflow: hidden;}
+.Touzi_bottominfo span{width: 50%;line-height:31px;float: left;font-size:14px;}
+.right_info{text-align: right}*/
+
+
+/*充值提现*/
+.Cash_list li {background-color:#fff;padding:4%;border-bottom: 1px solid #e5e5e5; }
+.Cash_list p, .Cash_list span { line-height:20px;font-size:14px;}
+.Cash_list p {color:#000;font-weight:bold;line-height:25px;}
+.Cash_list b{float: right; margin-top: 0px;}
+/*充值提现End*/
+
+/*提现*/
+.Tixian_list li {background-color:#fff;padding:4%;border-bottom: 1px solid #e5e5e5; }
+.Tixian_list li input[type=text]{border:0px;text-indent: 1em}
+.Tixian_list span { float:right;font-size:14px;}
+
+.Tixian_list p {color:#000;font-weight:bold;line-height:25px;}
+.Tixian_list b{float: right; margin-top: 0px;}
+/*提现End*/

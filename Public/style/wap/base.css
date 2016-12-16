@@ -1,0 +1,41 @@
+﻿/*@webSir Css*/
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+a, b, body, div, form, html, img, input, li, p, span, ul { font-size: 10pt; font-family: 'Microsoft YaHei'; color: #000;}
+ol, ul { list-style: none; }
+a {text-decoration:none;}
+/*@webSir CssEnd*/
+body { background-color:#ececec;}
+.viewport { min-width: 300px; max-width: 640px; margin: 0 auto; overflow: hidden; position: relative; }
+
+/*去除苹果样式*/
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {-webkit-appearance: none;}
+/*去除苹果样式*/
+
+/*头部*/
+.header {height:45px;background-color:#011C53;}
+.header a.back {color:#fff;width:25%;display:inline-block;font-size:16px;height:45px;line-height: 45px;}
+a.back b {margin-left:15px;margin-right:5px;background:url('../../images/wap/ico/ico_back.png') 0px 10px no-repeat;display:inline-block;width:10px;height:45px;    width: 10px;}
+.header_title {width:50%;display:inline-block;color:#fff;font-size:16px;text-align:center;height:45px;line-height: 45px;white-space:nowrap;}
+/*添加留言按钮*/
+.AMBtm { color:#fff;background-color:#52b54d;padding:6px 0px;font-size:12px;border-radius:14px;float:right;margin-right:8px;margin-top:8px;width:62px;text-align:center;}
+/*头部End*/
+input {outline:none;}
+/*底部*/
+.footer { height:55px;position:fixed;bottom:0px;width:100%;}
+.footer ul {overflow:hidden; background-color: rgb(212, 210, 210);}
+.footer li {width:25%;float:left;height:55px;}
+.footer a {display:block;padding-bottom:5px;padding:3px;}
+.footer i {background:url('../../images/wap/ico/ico_foot.png') repeat;display:block;height:21px;width:21px;background-size:300px;margin-top:10px;margin-bottom:3px;margin-left:auto;margin-right:auto;}
+.footer span {display:block;text-align:center;color:#000;font-size:14px;}
+i.ico_home {background-position:0px 0px; }
+i.ico_PHelp {background-position:-89px 0px; }
+i.ico_GHelp {background-position:-185px 0px; }
+i.ico_messageA {background-position:-279px 0px; }
+.footer li.hot { background-color:#ececec;}
+.footer li.hot i{background-image:url('../../images/wap/ico/ico_foot_hot.png')}
+.footer li.hot span {color:#1f3e73; }
+/*底部End*/

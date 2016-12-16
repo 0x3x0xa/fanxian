@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!--<meta name="format-detection" content="telephone=no"/>-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/H-ui/static/h-ui/css/H-ui.min.css" />
+  <link rel="stylesheet"  href="__STYLE__/wap/main.css"  type="text/css"/>
+        <link rel="stylesheet"  href="__STYLE__/wap/base.css"  type="text/css"/>
+        <script type="text/javascript" src="__JS__/home/jquery.js"></script>
+
+        <title></title>
+    </head>
+    <body style="background: #fff">
+        <div class="viewport">
+            <!--头部-->
+          <!--头部-->
+            <div class="header">
+                <a class="back" href='javascript:history.go(-1)'><b>&nbsp;</b>返回</a>
+                <span class="header_title">提现记录</span>
+            </div>
+            <!--头部End-->
+            <!--头部End-->
+  		<form action="" method="post" class="form form-horizontal SubmiForm" id="form-article-add" enctype="multipart/form-data">
+		{__TOKEN__}
+            <!--内容-->
+            <div class="Tixian_list">
+                 <div class="mt-0">
+            <table class="table table-border table-bordered  table-hover table-bg ">
+                <thead>
+                    <tr class="text-c">
+                       
+                        <th width="50">金额</th>
+                        <th width="50">手续费</th>
+                        <th width="50">状态</th>
+                        <th width="50">日期</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+               <volist name='list' id='vo'>
+                    <tr class="text-c"> 
+                        <td class="text-c"><{$vo.money}></td>
+                         <td class="text-c"><{$vo.poundage}></td>
+                        <td class="text-c"><{$status[$vo['status']]}></td>
+                        <td class="text-c"><{$vo.create_date|date="m-d",###}></td>
+                    </tr>
+                </volist>
+                </tbody>
+            </table>  
+            <div id="pageNav" class="pageNav"><{$page}></div>
+        </div>
+    </div>
+            </div>
+	</form>
+
+         
+<include file='Common:foot' />

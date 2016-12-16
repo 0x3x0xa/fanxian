@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!--<meta name="format-detection" content="telephone=no"/>-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+             <link rel="stylesheet"  href="__STYLE__/wap/main.css"  type="text/css"/>
+        <link rel="stylesheet"  href="__STYLE__/wap/base.css"  type="text/css"/>
+        <script type="text/javascript" src="__JS__/home/jquery.js"></script>
+
+        <title></title>
+    </head>
+    <body>
+        <div class="viewport">
+            <!--头部-->
+            <div class="header">
+                <a class="back" href='javascript:history.go(-1)'><b>&nbsp;</b>返回</a>
+                <span class="header_title">通知公告</span>
+            </div>
+            <!--头部End-->
+
+            <!--内容-->
+            <div class="Notice_list">
+                <ul>
+                       <volist name='list' id='vo' > 
+                    <li>
+                        <a href="<{:U('Home/Article/articlezhang/',array('id'=>$vo['id']))}>"> 
+                            <span class="Notice_title"><{$vo.art_title|msubstr=0,12,'utf-8',true}></span>
+                            <span class="Notice_datetime"> <{$vo.art_time|date='Y-m-d ',###}></span>
+                        </a>
+                    </li>
+                 </volist>
+                </ul>
+                <!--页码-->
+                <div style="height: 15px;"></div>
+                <div class="page">
+                     <{$page}> 
+                </div>
+                <!--页码End-->
+                <div style="height: 25px;"></div>
+            </div>
+
+
+
+            <!--内容End-->
+            <!--底部-->
+            <div style="height: 55px;"></div>
+        <include file='Common:foot' />

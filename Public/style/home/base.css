@@ -1,0 +1,30 @@
+﻿/*@webSir Css*/
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+a, b, body, div, form, html, img, input, li, p, span, ul { font-size: 14px; font-family: 'Microsoft YaHei'; color: #000; }
+ol, ul { list-style: none; }
+a {text-decoration:none;cursor:pointer;}
+/*@webSir CssEnd*/
+body { background-color:#fff;}
+.viewport { width: 1078px;  margin: 0 auto;  position: relative; }
+
+/*去除点击后的边框*/
+ input {outline:none;}
+
+
+/*头部*/
+.header {/*background-color:#093983;*/}
+.admin_bg {background:url('../../images/home/header_bg.jpg') no-repeat;height:88px;margin-top: 29px;border-bottom: 2px solid #BF9E57;}
+.header_nav { color:#fff;position:absolute;bottom:0;left:0;}
+.header_nav a {color:#fff;background-color:#3662af;font-size:16px;display:inline-block;padding:8px 0;border-top-left-radius:8px;border-top-right-radius:8px;text-align:center;width:93px;}
+.header_nav a.hot {color:#1f3e73;background-color:#fff; }
+/*头部End*/
+
+
+
+
+
+/*底部*/
+.footer {background-color:#acb2c2;height:50px;text-align:center;padding-top:43px; }
+    .footer span {color:#fff; }
+/*底部End*/

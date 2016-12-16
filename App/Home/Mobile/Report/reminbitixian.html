@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!--<meta name="format-detection" content="telephone=no"/>-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/H-ui/static/h-ui/css/H-ui.min.css" />
+  <link rel="stylesheet"  href="__STYLE__/wap/main.css"  type="text/css"/>
+        <link rel="stylesheet"  href="__STYLE__/wap/base.css"  type="text/css"/>
+        <script type="text/javascript" src="__JS__/home/jquery.js"></script>
+
+        <title></title>
+    </head>
+    <body style="background: #fff">
+        <div class="viewport">
+            <!--头部-->
+          <!--头部-->
+            <div class="header">
+                <a class="back" href='javascript:history.go(-1)'><b>&nbsp;</b>返回</a>
+                <span class="header_title">本金.收益提现</span>
+            </div>
+            <!--头部End-->
+            <!--头部End-->
+  		
+            <!--内容-->
+            <div class="Tixian_list">
+             <form action=""  class="form form-horizontal SubmiForm" id="form-article-add"  >
+                {__TOKEN__}
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-4 " style="text-align: right;"><span class="c-red">*</span>钱袋类型：</label>
+                    <div class="formControls col-xs-7 col-sm-4">
+                        <select class="select type select-box " size="1" name="type"  datatype="*" nullmsg="请选择钱袋类型"  >
+                            <option value=''>请选择钱袋类型</option>
+                            <foreach name='type' item='id'>
+                                <option value="<{$key}>" ><{$id}></option>
+                            </foreach>
+                        </select>
+
+                    </div>  
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-4 " style="text-align: right;"><span class="c-red">*</span>提现金额：</label>
+                    <div class="formControls col-xs-7 col-sm-4">
+                        <input type="text" class="input-text money"  value="" placeholder="" id="money" name="money"   nullmsg="请输入提现金额！" datatype="*" onblur="bb()" >
+                    </div>
+                  
+                </div>  
+             
+                 <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-4 " style="text-align: right;"><span class="c-red">*</span>收款卡号：</label>
+                    <div class="formControls col-xs-7 col-sm-4">
+                        <select class="select banktype select-box " size="1" name="banktype"  datatype="*" nullmsg="请选择收款卡号"  >
+                            <option value=''>请选择收款卡号</option>
+                            <volist name='userbanklist' id='vo' >
+                                <option value="<{$vo.id}>" ><{$vo.bankno}></option>
+                            </volist>
+                        </select>
+
+                    </div>    
+                </div>
+                <div class="money_msg row " style="text-align: center;color:red;" ></div>
+                <div class="row cl text-c">
+                    <button  class="btn btn-secondary radius"   type="submit"> 提交</button>
+                </div>
+                <div style=" clear: both"></div>
+                  <div class="row cl text-c">
+                      <p style="color:red">  注：除大陆法定节假日外</p>
+                        <p style="color:red">  所有资金都能正常提现到帐。</p>
+                </div>
+            </form>
+    </div>
+
+         
+<include file='Common:foot' />
+  <script type="text/javascript">
+            function  bb() {
+                var money = $('.money').val();
+                var type = $('.type').val();
+                var flag;
+                $.ajax({
+                    type: "post",
+                    url: "/Home/Report/getdeduct",
+                    data: {money: money, type: type},
+                    dataType: 'json',
+                    async: false, //设置为同步操作就可以给全局变量赋值成功 
+                    success: function (data) {
+                        if (data.status == 1)
+                        {
+                             $('.money_msg').html( data.msg);
+                              $('.money_msg').css('color','green');
+                              flag=true;
+                        } else
+                        {
+                            $('.money_msg').html(data.msg);
+                            $('.money_msg').css('color','red');
+                              flag=false; 
+                        }
+                        
+                        return flag;
+                    }
+                });
+                return flag;
+            }
+
+            $(function () {
+                $(".SubmiForm").Validform({
+                    callback: function (form) {
+                        var a=bb();
+                        if(a){
+                        tixian();
+                        }
+                        return false;
+                   
+                    },
+                    tiptype:1,
+                });
+            });
+        </script> 

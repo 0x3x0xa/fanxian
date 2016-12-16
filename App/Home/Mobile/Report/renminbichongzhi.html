@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!--<meta name="format-detection" content="telephone=no"/>-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/H-ui/static/h-ui/css/H-ui.min.css" />
+  <link rel="stylesheet"  href="__STYLE__/wap/main.css"  type="text/css"/>
+        <link rel="stylesheet"  href="__STYLE__/wap/base.css"  type="text/css"/>
+        <script type="text/javascript" src="__JS__/home/jquery.js"></script>
+
+        <title></title>
+    </head>
+    <body style="background: #fff">
+        <div class="viewport">
+            <!--头部-->
+          <!--头部-->
+            <div class="header">
+                <a class="back" href='javascript:history.go(-1)'><b>&nbsp;</b>返回</a>
+                <span class="header_title">我要充值</span>
+            </div>
+            <!--头部End-->
+            <!--头部End-->
+  
+            <!--内容-->
+            <div class="Tixian_list">
+
+	<form action=""  class="form form-horizontal SubmiForm" id="form-article-add"  >
+            <div class="row cl" style='text-indent:2em; background: #ededed;height:30px;line-height: 30px;'>
+		汇款信息
+		</div>
+                <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4 " style="text-align: right;">汇款账号：</label>
+			<div class="formControls col-xs-5 col-sm-4">
+                            <{$info.bankno}>
+			</div>
+                          
+		</div>
+                <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4 " style="text-align: right;">汇款银行：</label>
+			<div class="formControls col-xs-5 col-sm-4">
+                             <{$info.bankname}>
+			</div>
+                          
+		</div>
+                <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4 " style="text-align: right;">汇款姓名：</label>
+			<div class="formControls col-xs-5 col-sm-4">
+                             <{$info.username}>
+			</div>
+                          
+		</div>
+		{__TOKEN__}
+              <div class="row cl" style='text-indent:2em; background: #ededed;height:30px;line-height: 30px;'>
+		交易信息
+		</div>
+		        <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4 " style="text-align: right;"><span class="c-red">*</span>银行（支付宝）账号：</label>
+			<div class="formControls col-xs-7 col-sm-4">
+                            <input type="text" class="input-text bankapliyno"  value="" placeholder="" id="" name="bankapliyno" nullmsg="请输入银行（支付宝）账号！"  datatype="*" >
+			</div>
+                           <div class="Validform_checktip"></div>
+		</div>
+                  <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4 " style="text-align: right;"><span class="c-red">*</span>银行（支付宝）账户名：</label>
+			<div class="formControls col-xs-7 col-sm-4">
+                            <input type="text" class="input-text bankapliyname"  value="" placeholder="" id="" name="bankapliyname" nullmsg="请输入银行（支付宝）账户名！"  datatype="*" >
+			</div>
+                           <div class="Validform_checktip"></div>
+		</div>
+                            <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4 " style="text-align: right;"><span class="c-red">*</span>充值金额：</label>
+			<div class="formControls col-xs-7 col-sm-4">
+                            <input type="text" class="input-text money"  value="" placeholder="" id="" name="money"  nullmsg="请输入充值金额！" datatype="n"  ajaxurl="<{:U('/Home/Report/getallowchongzhiInfo')}>" >
+			</div>
+                           <div class="Validform_checktip"></div>
+		</div>
+                  <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4 " style="text-align: right;"><span class="c-red">*</span>交易银行：</label>
+			<div class="formControls col-xs-7 col-sm-4">
+				 <select class="select bank select-box " size="1" name="bank"  datatype="*" nullmsg="请选择银行"  >
+                            <option value=''>请选择银行</option>
+                            <volist name='banklist' id='vo'>
+                                <option value="<{$vo.bankname}>" ><{$vo.bankname}></option>
+                            </volist>
+                        </select>
+
+                        </div>  <div class="Validform_checktip"></div>    
+		</div>
+                
+		<div class="row cl text-c">
+                    <button  class="btn btn-secondary radius"   type="submit">提 交</button>
+		</div>
+                <div class="row cl text-c">
+                    <p style="color:red"> 注：10：00-20：00为实时充值到帐时间</p>
+                    <p style="color:red">其余时间充值也是该时间段到帐。</p>
+		</div>
+	</form>
+
+    </div>
+            </div>
+
+
+         
+<include file='Common:foot' />
+<script type="text/javascript">
+$(function(){
+
+$(".SubmiForm").Validform({
+                callback:function(form){
+                  chongzhi();
+                    return false;
+		},
+		tiptype:1,
+         
+	});	
+});
+</script> 
