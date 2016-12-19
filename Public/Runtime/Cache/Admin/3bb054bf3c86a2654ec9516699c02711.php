@@ -85,7 +85,7 @@
             <td><?php echo ($type[$vo['type']]); ?></td>
             <td><?php echo ($vo["money"]); ?></td>
              <td><?php echo ($vo["poundage"]); ?></td>
-             <td><?php echo ($vo["sum"]); ?></td>
+             <td><span style="color:red" ><?php echo ($vo["sum"]); ?></span></td>
                <td><?php echo ($vo["bankno"]); ?></td>
             <td><?php echo ($vo["bank"]); ?></td>
              <td><?php echo ($vo["username"]); ?></td>

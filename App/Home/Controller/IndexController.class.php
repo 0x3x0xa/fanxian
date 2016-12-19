@@ -14,10 +14,8 @@ class IndexController extends CommonController {
 
     public function main() {
         //$data=  bonusset();
-        $uid = session('uid');
-        $total_table=M('total');
-        $totalInfo=$total_table->where(array('uid'=>$uid))->find();
-        $this->assign('touzimoney',$totalInfo['selftotalmoney']);
+       // $uid = session('uid');
+     
         $article_table = M('article');
         $count = $article_table->where(array('art_status' => '1'))->count();
         $Page = new \Think\Page($count, 20);

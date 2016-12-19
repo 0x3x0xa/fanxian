@@ -155,7 +155,11 @@ class ReportController extends CommonController {
             $bank = I('post.bank', '', 'htmlspecialchars');
             $uid = session('uid');
             $chongzhi_table = M('chongzhi');
-                
+            
+            if($data['chongzhi_status']!=1){
+                showMsg(2, '充值已经关闭');
+            }
+            
             if ($money < 0 || floor($money) != $money || !is_numeric($money)) {
                 showMsg(2, '请输入有效的数字');
             }
@@ -202,6 +206,11 @@ class ReportController extends CommonController {
             $types = I('post.type', '', 'htmlspecialchars');
             $banktype = I('post.banktype', '', 'htmlspecialchars');
             $userbankinfo=$userbank_table->where(array('uid'=>$uid,'id'=>$banktype))->find();
+            
+            if($data['tixian_status']!=1){
+                showMsg(2, '提现已经关闭');
+            }
+            
               if(strstr($money,'.')){
                     showMsg(2, '请输入整数');
                 }
@@ -283,8 +292,15 @@ class ReportController extends CommonController {
             $money = I('post.money', '', 'htmlspecialchars');
             $towpassword = I('post.towpassword', '', 'htmlspecialchars');
             $types = I('post.type', '', 'htmlspecialchars');
+            
+            if($data['touzi_status']!=1){
+                 showMsg(2, '投资已经关闭' );
+            }
             $userInfo = $member_table->find($uid);
             $minmoney = $this->returnminmoney();
+            
+            
+            
             switch ($types){
                 case 1:
                      $usermoney = $userInfo['principal'] - $money;

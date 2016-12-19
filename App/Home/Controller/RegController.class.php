@@ -93,14 +93,14 @@ class RegController extends NotinController {
             if (!$member_table->autoCheckToken($_POST)) {
                 showMsg(2, '非法操作');
             }
-            $code = I('post.code', '', 'htmlspecialchars');
-            if (isset($_SESSION['code']) && !empty($_SESSION['code'])) {
-                if ($_SESSION['code'] != $code) {
-                    showMsg(2, '短信验证码错误');
-                }
-            } else {
-                 showMsg(2, '请获取短信验证码');
-            }
+//            $code = I('post.code', '', 'htmlspecialchars');
+//            if (isset($_SESSION['code']) && !empty($_SESSION['code'])) {
+//                if ($_SESSION['code'] != $code) {
+//                    showMsg(2, '短信验证码错误');
+//                }
+//            } else {
+//                 showMsg(2, '请获取短信验证码');
+//            }
 
              $ruserInfo = $member_table->find($uid);
             if (!$ruserInfo) {
@@ -240,15 +240,15 @@ class RegController extends NotinController {
         $member_table = M('member');
         if (IS_POST) {
             $member_table->startTrans();
-          
-            $code = I('post.code', '', 'htmlspecialchars');
-            if (isset($_SESSION['code']) && !empty($_SESSION['code'])) {
-                if ($_SESSION['code'] != $code) {
-                    showMsg(2, '短信验证码错误');
-                }
-            } else {
-                 showMsg(2, '请获取短信验证码');
-            }
+//          
+//            $code = I('post.code', '', 'htmlspecialchars');
+//            if (isset($_SESSION['code']) && !empty($_SESSION['code'])) {
+//                if ($_SESSION['code'] != $code) {
+//                    showMsg(2, '短信验证码错误');
+//                }
+//            } else {
+//                 showMsg(2, '请获取短信验证码');
+//            }
 
             $rid = encrypt(rawurldecode(I('post.m')), 'D', C('KEY'));
             $ruserInfo = $member_table->find($rid);

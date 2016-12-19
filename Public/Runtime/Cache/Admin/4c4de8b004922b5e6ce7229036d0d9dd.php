@@ -24,15 +24,19 @@
 <title>后台充值明细</title>
 </head>
 <body>
-    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 财务管理 <span class="c-gray en">&gt;</span> 会员充值 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-    <form method="get" action="/index.php/Admin/Report/chongzhilist.html">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 财务管理 <span class="c-gray en">&gt;</span> 后台充值明细 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <form method="get" action="/index.php/Admin/Report/recharge.html">
         <div class="pd-20">
             <div class="text-c"> 
-                <label><input name="search_status" value="1" type="radio" <?php if($arr['search_status'] == 1): ?>checked='checked' <?php elseif($_GET['search_status']== 1): ?>checked='checked'<?php endif; ?>>&nbsp;等&nbsp;待&nbsp;审&nbsp;核</label>&nbsp;
- <label><input name="search_status" value="3" type="radio" <?php if($arr['search_status'] == 3): ?>checked='checked'<?php elseif($_GET['search_status']== 3): ?>checked='checked'<?php endif; ?>>&nbsp;拒&nbsp;绝</label>&nbsp;
- <label><input name="search_status" value="2" type="radio" <?php if($arr['search_status'] == 2): ?>checked='checked'<?php elseif($_GET['search_status']== 2): ?>checked='checked'<?php endif; ?>>&nbsp;交&nbsp;易&nbsp;完&nbsp;成&nbsp;</label>&nbsp;
- &nbsp;&nbsp;&nbsp;&nbsp;
-                       <label>
+                <span class="select-box" style='width:150px;'>
+                    <select name="search_type" class='select' value="">
+                        <option value="" >全部显示</option>
+                        <?php if(is_array($type)): foreach($type as $key=>$vo1): ?><option value="<?php echo ($key); ?>" <?php if($arr["search_type"] == $key): ?>selected<?php elseif($_GET['search_type']== $key): ?>selected<?php endif; ?>><?php echo ($vo1); ?></option><?php endforeach; endif; ?>
+                    </select></span>
+
+                <label><input name="search_status" value="1" type="radio" <?php if($arr['search_status'] == 1): ?>checked<?php elseif($_GET['search_status']== 1): ?>checked<?php endif; ?>>&nbsp;充值</label>&nbsp;
+                <label><input name="search_status" value="2" type="radio" <?php if($arr['search_status'] == 2): ?>checked<?php elseif($_GET['search_status']== 2): ?>checked<?php endif; ?>>&nbsp;扣除</label>&nbsp;
+                <label>
 
                     日期范围：<input type="text" onFocus="WdatePicker({maxDate: '#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})" id="datemin" name='search_starttime' class="input-text Wdate" style="width:120px;" value="<?php echo ($arr['search_starttime']); ?>">
                     -
@@ -48,47 +52,33 @@
     <table class="table table-border table-bordered table-hover table-bg table-sort">
         <thead>
             <tr class="text-c">
+
                 <th width="30">ID</th>
+                <th width="100">钱袋</th>
+                <th width="100">类型</th>
                 <th width="">账号</th>
                 <th width="">姓名</th>
                 <th width="">手机号</th>
-                <th width="">订单号</th>
-                 <th width="">银行（支付宝）账号</th>
-                   <th width="">银行（支付宝）账户名</th>
-                 <th width="">交易银行</th>
-                <th width="">充值金额</th>
-                <th width="">状态</th>
-                <th width="180">日期</th>
-                 <?php if($arr['search_status'] == 1): ?><th width="100">操作</th>
-                 <?php else: ?>
-                 <th width="180">操作日期</th>
-                 <th width="100">操作人员</th><?php endif; ?>
+                <th width="">数额</th>
+                <th width="100">操作人员</th>
+                <th width="180">操作时间</th>
+
             </tr>
         </thead>
         <tbody>
         <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="text-c">
-            <td><?php echo ($i); ?></td>
+                <td><?php echo ($i); ?></td>
+                <td class="text-c"> 
+                    <?php echo ($type[$vo['pursetype']]); ?>
+                </td>
+                <td>
+            <?php if($vo["status"] == 1): ?>充值<?php elseif($vo["status"] == 2): ?>扣除<?php endif; ?></td>
             <td><?php echo ($vo["username"]); ?></td>
             <td><?php echo ($vo["name"]); ?></td>
             <td><?php echo ($vo["mobile"]); ?></td>
-            <td><?php echo ($vo["no"]); ?></td>
-            <td><?php echo ($vo["bankapliyno"]); ?></td>
-              <td><?php echo ($vo["bankapliyname"]); ?></td>
-            <td><?php echo ($vo["bank"]); ?></td>
-            <td><span style="color:green"><?php echo ($vo["money"]); ?></span></td>
-            <td><?php echo ($status[$vo['status']]); ?></td>
+            <td><?php echo ($vo["number"]); ?></td>
+            <td><?php echo ($vo["adminname"]); ?></td>
             <td><?php echo (date('Y-m-d H:i:s',$vo["create_date"])); ?></td>
-            <?php if($vo["status"] == 1): ?><td> 
-                    <a href="javascript:;" onclick="ConfirmReceipt('<?php echo ($vo["id"]); ?>')" >确认收款</a>  
-                    <a href="javascript:;" onclick="RefuseCollection('<?php echo ($vo["id"]); ?>')" >拒绝</a>
-                </td>
-                <?php else: ?>
-                 <td> 
-                   <?php echo (date('Y-m-d H:i:s',$vo["replace_date"])); ?>
-                </td>
-                  <td> 
-                   <?php echo ($vo["admin"]); ?>
-                </td><?php endif; ?>
             </tr><?php endforeach; endif; else: echo "" ;endif; ?>
     </tbody>
 </table>

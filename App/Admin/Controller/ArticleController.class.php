@@ -164,11 +164,11 @@ class ArticleController extends CommonController {
         if (IS_POST) {
 
             $_POST['art_content'] = $_POST['editorvalue'];
-            if (empty($_POST['Wdate'])) {
-                $time = time();
-            } else {
+        //    if (empty($_POST['Wdate'])) {
+         //       $time = time();
+        //    } else {
                 $time = strtotime($_POST['Wdate'] . date('h:i:s'));
-            }
+        //    }
             $_POST['art_time'] = $time;
 
 
@@ -194,11 +194,16 @@ class ArticleController extends CommonController {
         if (IS_POST) {
 
             $_POST['art_content'] = $_POST['editorvalue'];
-            if (empty($_POST['Wdate'])) {
-                $time = time();
-            } else {
-                $time = strtotime($_POST['Wdate'] . date('h:i:s'));
-            }
+         //   if (empty($_POST['Wdate'])) {
+             //   $time = time();
+          //  } else {
+            $dd=$_POST['selectdate'];
+                $time = strtotime($_POST['selectdate'] . date('h:i:s'));
+          //  }
+
+             $_POST['art_time'] = $time;
+
+            
 
             $relust = $article_table->save($_POST);
             if ($relust) {

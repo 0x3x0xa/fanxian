@@ -24,12 +24,13 @@
                             <th style="width: 100px;">姓名</th>
                             <th style="width: 100px;">会员级别</th>
                             <th style="width: 150px;">手机号</th>
-                            <th style="width: 150px;">推荐人数</th>
+                            <th style="width: 150px;">邀请人数</th>
                             <th style="width: 250px;">状态</th>
                             <th style="width: 250px;">注册时间</th>
 							<th style="width: 150px;">操作</th>
                         </tr>
 						<volist name='list' id='vo' >
+
                         <tr> <td><{$vo.username}></td>
                             <td><{$vo.name}></td>
                             <td><{$star[$vo['star']]}></td>

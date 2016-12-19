@@ -1,0 +1,144 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="/Public/style/home/base.css">
+<link rel="stylesheet" type="text/css" href="/Public/style/home/main.css">
+<link href="/Public/style/home/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+<script src="/Public/js/home/jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="/Public/H-ui/lib/layer/2.1/layer.js"></script>
+<script src="/Public/js/home/H-ui.home.js" type="text/javascript"></script>
+<style type="text/css" >
+html{overflow-x: hidden;}
+</style>
+</head>
+<style type='text/css'>
+.login_dv input[type=text],.login_dv input[type=password]{margin-top:0px;}
+a{display:block;line-height:30px;height:30px;float:left;width:60px;text-align:center;}
+a:hover{color:red;}
+
+.login_bg{
+    width: 100%;
+    height:373px;
+}
+.login_box{
+    width: 100%;
+    margin-top:373px;
+    text-align: center;
+}
+
+
+</style>
+<body style="min-width:1200px;overflow:hidden;">
+    <div class="login_bg">
+    <img src="/Public/images/home/login_bg2.jpg"  style="width:100%;position: fixed;height: 373px"/>
+    </div>
+
+    <div class="login_dv" >
+<!--        <img src="/Public/images/home/logo.png" alt="logo_img" style="width:100%;;" />-->
+<div class="left_login"style="width:200px;height: 100%;float:left;text-align: center;padding-top: 50px;">
+    <img src="/Public/images/home/logo.png" alt="logo_img" style="width:100%;;" />
+</div>
+<div class="right_login"style="float:right;">
+       <form method="post" action="/home/Login/login" id='login_gorm'>
+           <div>
+           <i class="login_user"></i>
+           <input type="text"  placeholder="用户名"  name='username'  class="user_name" style="padding-left:25px" />
+			<div class='username_tip'  style="color:red;height:20px;" ><span  style='color:#d00000;'></span></div>
+            <input type="password"  placeholder="密码" name='pwd' class='pwd' style="padding-left:25px"/>
+            <i class="icon-pwd"></i>
+			<div class='pwd_tip'  style="color:red;height:20px;"><span style='color:#d00000;'></span></div>
+		    
+			<input type="text"  placeholder="验证码" name='code' class='code' style='width:120px;margin:0px;float:left;padding-left: 25px'/>
+			<img class='codeimg' src="/home/Login/code" style="cursor:pointer;margin-top:0px;top:0px;width:130px;height:41px;float:right;" title="看不清可单击图片刷新" onclick="this.src='/home/Login/code?d='+Math.random();"> 
+			<div class='code_tip'  style="color:red;height:20px;"><span style='color:#d00000;'></span></div>
+			
+            <input type="button" name="name" value="登录" class='log_btn'  style='margin-top:10px;'/>
+           
+        </form>
+      <a class="forget_psw" onclick="showPage(600,450,'找回密码','<?php echo U('Home/Login/petpwd');?>')">忘记密码</a>
+</div>	
+     
+    </div>
+
+</body>
+</html>
+<script type="text/javascript">
+    $(function() {
+        $('.user_name,.pwd,.code').focus(function() {
+            $(this).attr('placeholder', '');
+        });
+        var uname = $.trim($('.user_name').val());
+        var pwd = $.trim($('.pwd').val());
+		var code= $.trim($('.code').val());
+        $('.user_name').blur(function() {
+            if (uname == '') {
+                $(this).attr('placeholder', '');
+            }
+        });
+        $('.pwd').blur(function() {
+            if (pwd == '') {
+                $(this).attr('placeholder', '');
+            }
+        });
+		 $('.code').blur(function() {
+            if (code == '') {
+                $(this).attr('placeholder', '');
+            }
+        });
+        $('.log_btn').click(function() {
+            var uname = $.trim($('.user_name').val());
+            var pwd = $.trim($('.pwd').val());
+			 var code = $.trim($('.code').val());
+            if (!uname) {
+                $('.username_tip span').html('输入用户名');
+                return false;
+            } else {
+                $('.username_tip span').html('');
+            }
+            if (pwd.length<6|| pwd.length>12) {
+                $('.pwd_tip span').html('输入密码（6-12）');
+                return false;
+            } else {
+                $('.pwd_tip span').html('');
+            }
+			if (!code) {
+                $('.code_tip span').html('输入验证码');
+                return false;
+            } else {
+                $('.code_tip span').html('');
+            }
+		  
+		    
+            if (uname && pwd && pwd.length>=6&&pwd.length <=12) {
+
+				
+                $.post('/index.php/Home/Login/ajax_login', {username: uname, pwd: pwd,code:code},
+                function(data) {
+                    if (data.status == 1) {
+                        $('.username_tip span').html('');
+                        $('.pwd_tip span').html('');
+						$('.code_tip span').html('');
+                        location.href = data.url;
+                    } else {
+                        if (data.type == 1) {
+							$(".codeimg").attr('src',"/home/Login/code?d='+Math.random();");
+                            $('.username_tip span').html(data.msg);
+                        } 
+						else if(data.type == 2){
+							$(".codeimg").attr('src',"/home/Login/code?d='+Math.random();");
+                            $('.pwd_tip span').html(data.msg);
+							
+                        }
+					    else if(data.type == 3){
+							$(".codeimg").attr('src',"/home/Login/code?d='+Math.random();");
+                            $('.code_tip span').html(data.msg);
+                        }
+						
+                    }
+                }, "json");
+			 
+		   }
+        });
+    });
+</script>

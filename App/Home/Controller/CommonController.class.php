@@ -42,7 +42,9 @@ class CommonController extends Controller {
         } else {
             redirect(U('Login/index'));
         }
-   
+        $total_table=M('total');
+        $totalInfo=$total_table->where(array('uid'=>  session('uid')))->find();
+        $this->assign('touzimoney',$totalInfo['selftotalmoney']);
          
         $member_table = M('member');
         $userInfo = $member_table->find(session('uid'));

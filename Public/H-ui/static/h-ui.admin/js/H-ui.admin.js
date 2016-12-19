@@ -669,12 +669,13 @@ function article_edit_save() {
     var art_source = $('.art_source').val();
     var art_author = $('.art_author').val();
     var art_type = $('.art_type').val();
-     var Wdate=$('.Wdate').val();
+     var selectdate=$('.Wdate').val();
+    
     var editorvalue = UE.getEditor('editor').getContent();
     $.ajax({
         type: "post",
         url: "/Admin/Article/articleedit",
-        data: {id: id, art_title: art_title, art_source: art_source, art_author: art_author, art_type: art_type, editorvalue: editorvalue,Wdte:Wdate},
+        data: {id: id, art_title: art_title, art_source: art_source, art_author: art_author, art_type: art_type, editorvalue: editorvalue,selectdate:selectdate},
         dataType: 'json',
         async: false, //设置为同步操作就可以给全局变量赋值成功 
         success: function (data) {

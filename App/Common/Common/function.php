@@ -193,7 +193,7 @@ function set_code_sms($mobile, $num, $minute, $code_db, $mian_db, $frequency) {
 
 //随机数
 function create_code($num) {
-    $str = "1,2,3,4,5,6,7,8,9,a,b,c,d,f,g,h,i,z,k,l,m,n,o,p,q,r,s,t,u,v,w,y,x,z";      //要显示的字符，可自己进行增删
+    $str = "1,2,3,4,5,6,7,8,9";      //要显示的字符，可自己进行增删
     $list = explode(",", $str);
     $cmax = count($list) - 1;
     $verifyCode = '';

@@ -15,7 +15,7 @@
 				<ul>
 				<volist name='list2' id='vo2' >
 					<if condition="$vo1[id] eq $vo2[pid] ">
-					<li><a _href="<{:U($vo2['control_action'])}>" data-title="<{$vo2.name}>" href="javascript:void(0)"><{$vo2.name}></a></li>
+                                            <li><a _href="<{:U($vo2['control_action'])}>" data-title="<{$vo2.name}>" href="javascript:void(0)"    <if condition="$vo2.name eq '会员提现'" >style="color:red;"<elseif condition="$vo2.name eq '会员充值'  " />style="color:green;"</if> ><{$vo2.name}></a></li>
 					</if>
 				</volist>
 				</ul>
