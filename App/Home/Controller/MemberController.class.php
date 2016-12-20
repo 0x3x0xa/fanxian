@@ -85,7 +85,7 @@ class MemberController extends CommonController {
 
     public function listcontactman() {
         $uid = session('uid');
-        $money = $this->yeji($uid, 5);
+        $money = $this->yeji($uid, 0);
         $this->assign('money', $money);
         $this->display();
     }
