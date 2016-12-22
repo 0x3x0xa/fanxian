@@ -25,7 +25,7 @@
 </head>
 <body>
     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 财务管理 <span class="c-gray en">&gt;</span> 投资列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-    <form method="get" action="/index.php/Admin/Report/touzilist.html">
+    <form method="get" action="/index.php/Admin/Report/touzilist.html?search_status=1&amp;search_starttime=&amp;search_endtime=&amp;search_username=yr8912&amp;token=16ee1daa45848459cc1ddc0a27fe52ff_a8adb26c2ad6f6e3515e2848847c5261">
         <div class="pd-20">
             <div class="text-c"> 
             <label><input name="search_status" value="1" type="radio" <?php if($arr['search_status'] == 1): ?>checked='checked' <?php elseif($_GET['search_status']== 1): ?>checked='checked'<?php endif; ?>>&nbsp;计息中</label>&nbsp;

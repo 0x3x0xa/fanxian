@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/G:/NetBeans/PHP/fanxian/App/Home/View/Index/main.html</file>
+            <file>file:/G:/NetBeans/PHP/fanxian/App/Home/Controller/MemberController.class.php</file>
+            <file>file:/G:/NetBeans/PHP/fanxian/.gitignore</file>
+            <file>file:/G:/NetBeans/PHP/fanxian/App/Home/Controller/ReportController.class.php</file>
             <file>file:/G:/NetBeans/PHP/fanxian/App/Home/View/Index/index.html</file>
-            <file>file:/G:/NetBeans/PHP/fanxian/App/Common/Common/function.php</file>
+            <file>file:/G:/NetBeans/PHP/fanxian/App/Home/Controller/LoginController.class.php</file>
+            <file>file:/G:/NetBeans/PHP/fanxian/App/Home/View/Report/touziguanli.html</file>
         </group>
     </open-files>
 </project-private>

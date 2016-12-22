@@ -199,23 +199,27 @@ class LoginController extends NotinController {
         $invest_table = M('invest');
         $bonus_table = M('bonus');
         $shouyi_table = M('shouyi');
+        $total_table=M('total');
         $list = $invest_table->select();
         $count = count($list);
         for ($i = 0; $i < $count; $i++) {
             if ($list[$i]['money'] > 0) {
-                $returnrate = $this->returnrate($list[$i]['money']);
+                 
+                $alltouzimoney=$total_table->where(array('uid'=>$list[$i]['uid']))->sum('selftotalmoney');
+                $returnrate = $this->returnrate($alltouzimoney);
                 $rate = $returnrate['rate'] / 100;
                 $money = $rate * $list[$i]['money'];
                 $userInfo = $member_table->field('profit,recommend,username')->find($list[$i]['uid']);
                 $usermoney = $userInfo['profit'] + $money;
-                $invest_table->save(array('id' => $list[$i]['id'], 'day' => $list[$i]['day'] + 1, 'bonus' => $money, 'allbonus' => $list[$i]['allbonus'] + $money));
+                $invest_table->save(array('id' => $list[$i]['id'], 'day' => $list[$i]['day'] + 1, 'bonus' => $money, 'allbonus' => $list[$i]['allbonus'] + $money,'rate'=>$rate));
                 $member_table->save(array('id' => $list[$i]['uid'], 'profit' => $usermoney));
                 $bonus_table->add(array('uid' => $list[$i]['uid'],'pursetype'=>'2', 'sum' => $money, 'balance' => $usermoney, 'status' => '1', 'create_date' => time(), 'type' => '2', 'explain' => '每日收益'));
                 $shouyi_table->add(array('uid' => $list[$i]['uid'], 'order_no' => $list[$i]['no'], 'sum' => $list[$i]['sum'], 'money' => $list[$i]['money'], 'create_date' => time(), 'order_date' => $list[$i]['create_date'], 'rate' => $returnrate['rate'], 'bonus' => $money));
 
                 if ($userInfo['recommend'] > 0) {
                     $this->recommond($userInfo['recommend'], $money, $userInfo['username'],$list[$i]['uid'],1,$list[$i]['no']);
-                    $this->group($userInfo['recommend'], $money, $userInfo['username'],$list[$i]['uid'],2,$list[$i]['no']);
+                  
+                    $this->group($userInfo['recommend'], $money, $userInfo['username'],$list[$i]['uid'],2,$list[$i]['no'],0);
                 }
             }
         }
@@ -235,7 +239,7 @@ class LoginController extends NotinController {
         $bonus_table->add(array('uid' => $rid, 'status' => 1, 'create_date' => time(), 'sum' => $money, 'balance' => $usermoney,'pursetype'=>'2', 'type' => '3', 'explain' => "来自：" . $username . '直推奖', 'source' => '2'));
     }
 
-    protected function group($rid, $bonus, $username,$uid,$type,$order_no) {
+    protected function group($rid, $bonus, $username,$uid,$type,$order_no,$level) {
         $data = bonusset();
         $rate = $data['tdjlj'] / 100;
         $member_table = M('member');
@@ -247,10 +251,12 @@ class LoginController extends NotinController {
             $usermoney = $userInfo['profit'] + $money;
             $member_table->save(array('id' => $rid, 'profit' => $usermoney));
             $bonusshouyi_table->add(array('uid'=>$rid,'fid'=>$uid,'create_date'=>  time(),'bonus'=>$money,'fbonus'=>$bonus,'rate'=>$data['tdjlj'] ,'order_no'=>$order_no,'type'=>$type,'message'=> "来自：" . $username . '团队奖'));
-            $bonus_table->add(array('uid' => $rid, 'status' => 1, 'create_date' => time(), 'sum' => $money, 'balance' => $usermoney,'pursetype'=>'2', 'type' => '4', 'explain' => "来自：" . $username . '团队奖', 'source' => '2'));
-        }
-        if ($userInfo['recommend'] > 0) {
-            self::group($userInfo['recommend'], $bonus, $username,$uid,$type,$order_no);
+            $bonus_table->add(array('uid' => $rid, 'status' => 1, 'create_date' => time(), 'sum' => $money, 'balance' => $usermoney,'pursetype'=>'2', 'type' => '4', 'explain' => "来自".$level."---".$username . '团队奖', 'source' => '2'));
+        }  
+        $level++;
+        if ($userInfo['recommend'] > 0&&$level<5) {
+          
+            self::group($userInfo['recommend'],$bonus, $username,$uid,$type,$order_no,$level);
         }
     }
 
